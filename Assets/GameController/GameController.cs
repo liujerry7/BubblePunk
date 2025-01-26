@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    public GameObject tutorial;
     public GameObject gameOverScreen;
     public GameObject player;
     public BubbleWand bubbleWand;
@@ -18,6 +19,7 @@ public class GameController : MonoBehaviour
         PlayerHealth.OnPlayerDied += GameOverScreen;
         PlayerHealth.OnPlayerBeatLevel += NextLevel;
         gameOverScreen.SetActive(false);
+        tutorial.SetActive(false);
     }
 
     public void ResetGame()
@@ -36,6 +38,7 @@ public class GameController : MonoBehaviour
     private void FillBubbleWand()
     {
         bubbleWand.Fill();
+        tutorial.SetActive(true);
     }
 
     private void GameOverScreen()
