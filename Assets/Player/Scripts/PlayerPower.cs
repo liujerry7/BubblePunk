@@ -19,6 +19,7 @@ public class PlayerPower : MonoBehaviour
                 GameObject newPlatform = Instantiate(bubblePlatform, pos + offset, Quaternion.identity);
                 ammo--;
                 bubbleWand.Empty();
+                SFXManager.Play("Pop");
             }
         }
     }

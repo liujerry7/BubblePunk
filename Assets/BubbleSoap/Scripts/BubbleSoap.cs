@@ -16,6 +16,7 @@ public class BubbleSoap : MonoBehaviour
             var playerPower = collision.gameObject.GetComponent<PlayerPower>();
             playerPower.ammo++;
             bubbleWand.Fill();
+            SFXManager.Play("Pop");
             Destroy(gameObject);
         }
     }

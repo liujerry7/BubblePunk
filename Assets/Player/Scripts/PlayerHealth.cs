@@ -35,6 +35,7 @@ public class PlayerHealth : MonoBehaviour
         {
             Hurt(1);
             rb.velocity = new Vector2(rb.velocity.x, hurtThrust);
+            SFXManager.Play("Pop");
         }
     }
 
