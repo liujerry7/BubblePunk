@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 90244c6c6ea534f8fab145801bdb7cdb
+guid: 0c696fb68057647c5ad344b6a1de2cd7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8216291465225716156
-    second: SirSuds1_0
+      213: -5449792019640434635
+    second: SirSuds2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,22 +100,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SirSuds1
+      name: SirSuds2_0
       rect:
         serializedVersion: 2
-        x: 604
-        y: 696
-        width: 217
-        height: 375
+        x: 605
+        y: 694
+        width: 215
+        height: 377
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cb14adb4e81260270800000000000000
-      internalID: 8216291465225716156
+      spriteID: 530c29948037e54b0800000000000000
+      internalID: -5449792019640434635
       vertices: []
       indices: 
       edges: []
@@ -123,7 +123,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 07d8bb7e615614059ac537c9ba507373
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -131,7 +131,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SirSuds1: 8216291465225716156
+      SirSuds2_0: -5449792019640434635
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

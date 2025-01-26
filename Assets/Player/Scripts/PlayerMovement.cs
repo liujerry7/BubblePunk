@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         Flip();
 
         animator.SetFloat("yVelocity", rb.velocity.y);
+        animator.SetFloat("magnitude", rb.velocity.magnitude);
     }
 
     public void Move(InputAction.CallbackContext context)
