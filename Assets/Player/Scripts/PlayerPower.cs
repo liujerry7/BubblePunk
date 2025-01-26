@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerPower : MonoBehaviour
 {
+    public GameObject tutorial;
     public BubbleWand bubbleWand;
     public GameObject bubblePlatform;
     public int ammo = 0;
@@ -20,6 +21,7 @@ public class PlayerPower : MonoBehaviour
                 ammo--;
                 bubbleWand.Empty();
                 SFXManager.Play("Pop");
+                tutorial.SetActive(false);
             }
         }
     }
