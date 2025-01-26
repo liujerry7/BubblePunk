@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
@@ -11,13 +12,20 @@ public class PlayerHealth : MonoBehaviour
     private Rigidbody2D rb;
     public float hurtThrust;
     private SpriteRenderer spriteRenderer;
+    public static event Action OnPlayerDied;
 
     public void Start()
     {
-        currHealth = maxHealth;
-        bubbleHearts.SetMaxHearts(maxHealth);
+        ResetHealth();
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        GameController.OnReset += ResetHealth;
+    }
+
+    private void ResetHealth()
+    {
+        currHealth = maxHealth;
+        bubbleHearts.SetMaxHearts(maxHealth);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -38,7 +46,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (currHealth <= 0)
         {
-            Debug.Log("Player died");
+            OnPlayerDied.Invoke();
         }
     }
 

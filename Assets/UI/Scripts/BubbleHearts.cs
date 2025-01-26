@@ -13,7 +13,6 @@ public class BubbleHearts : MonoBehaviour
 
     public void SetMaxHearts(int maxHearts)
     {
-        Debug.Log("set max hearts");
         foreach(Image heart in hearts)
         {
             Destroy(heart.gameObject);
