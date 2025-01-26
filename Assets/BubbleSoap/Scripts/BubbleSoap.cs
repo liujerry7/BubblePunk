@@ -5,17 +5,16 @@ using UnityEngine;
 
 public class BubbleSoap : MonoBehaviour
 {
-    // public BubbleAmmo bubblesUi;
-    public BubbleWand bubbleWand;
-    // public static event Action OnBubbleSoapCollect;
+    public static event Action OnBubbleSoapCollect;
+    public event Action OnBubbleDie;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name == "Player") {
-            // OnBubbleSoapCollect.Invoke();
             var playerPower = collision.gameObject.GetComponent<PlayerPower>();
-            playerPower.ammo++;
-            bubbleWand.Fill();
+            OnBubbleSoapCollect.Invoke();
+            OnBubbleDie.Invoke();
+            playerPower.ammo = Mathf.Min(1, playerPower.ammo + 1);
             SFXManager.Play("Pop");
             Destroy(gameObject);
         }
