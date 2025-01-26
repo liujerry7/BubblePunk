@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     public float hurtThrust;
     private SpriteRenderer spriteRenderer;
     public static event Action OnPlayerDied;
+    public static event Action OnPlayerBeatLevel;
 
     public void Start()
     {
@@ -36,6 +37,11 @@ public class PlayerHealth : MonoBehaviour
             Hurt(1);
             rb.velocity = new Vector2(rb.velocity.x, hurtThrust);
             SFXManager.Play("Pop");
+        }
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Flag"))
+        {
+            OnPlayerBeatLevel.Invoke();
         }
     }
 

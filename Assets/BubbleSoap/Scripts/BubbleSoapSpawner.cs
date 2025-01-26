@@ -29,7 +29,7 @@ public class BubbleSoapSpawner : MonoBehaviour
 
     private void SpawnSoap()
     {
-        BubbleSoap soapChild = Instantiate(bubbleSoap);
+        BubbleSoap soapChild = Instantiate(bubbleSoap, transform);
         soapChild.OnBubbleDie += StartTimer;
         timerStarted = false;
     }

@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
     {
         BubbleSoap.OnBubbleSoapCollect += FillBubbleWand;
         PlayerHealth.OnPlayerDied += GameOverScreen;
+        PlayerHealth.OnPlayerBeatLevel += NextLevel;
         gameOverScreen.SetActive(false);
     }
 
@@ -24,6 +25,12 @@ public class GameController : MonoBehaviour
         gameOverScreen.SetActive(false);
         LoadLevel(0);
         OnReset.Invoke();
+    }
+
+    private void NextLevel()
+    {
+        int nextLevelIdx = currLevelIdx >= levels.Count - 1 ? 0 : currLevelIdx + 1;
+        LoadLevel(nextLevelIdx);
     }
 
     private void FillBubbleWand()
