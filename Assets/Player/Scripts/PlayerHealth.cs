@@ -22,6 +22,10 @@ public class PlayerHealth : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         GameController.OnReset += ResetHealth;
     }
+    
+    public int GetCurrentHealth() {
+        return currHealth;
+    }
 
     private void ResetHealth()
     {

@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour
     public void ResetGame()
     {
         gameOverScreen.SetActive(false);
-        LoadLevel(0);
+        LoadLevel(currLevelIdx);
         OnReset.Invoke();
     }
 

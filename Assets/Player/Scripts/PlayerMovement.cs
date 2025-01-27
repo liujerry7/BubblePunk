@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (GetComponent<PlayerHealth>().GetCurrentHealth() <= 0) return;
         rb.velocity = new Vector2(xMovement * moveSpeed, rb.velocity.y);
         Gravity();
         Flip();
@@ -44,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
+        if (GetComponent<PlayerHealth>().GetCurrentHealth() <= 0) return;
         if (!isGrounded())
         {
             return;
